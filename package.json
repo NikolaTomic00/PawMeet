@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "axios": "^1.16.0",
     "cors": "^2.8.6",
     "object-assign": "^4.1.1",
     "vary": "^1.1.2"
   },
-  "devDependencies": {},
   "scripts": {
     "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
     "start": "npm run start --prefix backend"
