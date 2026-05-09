@@ -8,13 +8,15 @@ import cors from "cors";
 
 dotenv.config();
 
-const app = express();
 app.use(
   cors({
     origin: "https://pawmeet-1.onrender.com",
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
+
 app.use(express.json());
 app.use(cookieParser());
 
