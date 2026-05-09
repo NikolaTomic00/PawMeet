@@ -1,6 +1,7 @@
 import { generateToken } from "../lib/utils.js";
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
+import cloudinary from "../lib/cloudinary.js";
 
 export const signup = async (req, res) => {
   try {
@@ -122,4 +123,35 @@ export const logout = (req, res) => {
     success: true,
     message: "Logged out successfully",
   });
+};
+
+export const updateProfile = async (req, res) => {
+  try {
+    const { profilePic, dogName, dogBreed, location } = req.body;
+
+    const userId = req.user._id;
+
+    let updatedData = {
+      dogName,
+      dogBreed,
+      location,
+    };
+
+    if (profilePic) {
+      const uploadResponse = await cloudinary.uploader.upload(profilePic, {
+        folder: "pawmeet_profiles",
+      });
+
+      updatedData.profilePic = uploadResponse.secure_url;
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(userId, updatedData, {
+      new: true,
+    }).select("-password");
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    console.log("Error in update profile:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
 };
