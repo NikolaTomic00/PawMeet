@@ -1,0 +1,28 @@
+{
+  "name": "pawmeet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "object-assign": "^4.1.1",
+    "vary": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikolaTomic00/PawMeet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/NikolaTomic00/PawMeet/issues"
+  },
+  "homepage": "https://github.com/NikolaTomic00/PawMeet#readme"
+}
