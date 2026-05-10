@@ -6,7 +6,6 @@ Highlights:
 ⚡ Real-time messaging with Socket.io
 🟢 Online / offline user presence
 🔔 Typing & notification sounds (toggleable)
-📨 Email notifications on signup (Resend)
 🗂️ Image upload support (Cloudinary)
 🧰 REST API built with Node.js & Express
 🧱 MongoDB database for persistence
