@@ -63,6 +63,21 @@ function ProfileHeader() {
             </h3>
 
             <p className="text-slate-400 text-xs">Online</p>
+
+            {/* DOG INFO */}
+            <div className="mt-2 flex flex-col gap-1 text-xs text-slate-400">
+              <span className="flex items-center gap-1">
+                🐶 {authUser.dogName || "No dog"}
+              </span>
+
+              <span className="flex items-center gap-1">
+                🐕 {authUser.breed || "No breed"}
+              </span>
+
+              <span className="flex items-center gap-1">
+                📍 {authUser.location || "No location"}
+              </span>
+            </div>
           </div>
         </div>
 

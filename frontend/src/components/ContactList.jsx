@@ -4,7 +4,8 @@ import UsersLoadingSkeleton from "./UsersLoadingSkeleton";
 import { useAuthStore } from "../store/useAuthStore";
 
 function ContactList() {
-  const { getAllContacts, allContacts, setSelectedUser, isUsersLoading } = useChatStore();
+  const { getAllContacts, allContacts, setSelectedUser, isUsersLoading } =
+    useChatStore();
   const { onlineUsers } = useAuthStore();
 
   useEffect(() => {
@@ -22,12 +23,26 @@ function ContactList() {
           onClick={() => setSelectedUser(contact)}
         >
           <div className="flex items-center gap-3">
-            <div className={`avatar ${onlineUsers.includes(contact._id) ? "online" : "offline"}`}>
+            <div
+              className={`avatar ${onlineUsers.includes(contact._id) ? "online" : "offline"}`}
+            >
               <div className="size-12 rounded-full">
                 <img src={contact.profilePic || "/avatar.png"} />
               </div>
             </div>
-            <h4 className="text-slate-200 font-medium">{contact.fullName}</h4>
+            <div className="flex flex-col">
+              <h4 className="text-slate-200 font-medium">{contact.fullName}</h4>
+
+              <div className="text-xs text-slate-400 mt-1 space-y-0.5">
+                <p className="flex items-center gap-1">
+                  🐶 {contact.dogName || "No dog"}
+                </p>
+
+                <p className="flex items-center gap-1">
+                  📍 {contact.location || "No location"}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       ))}
