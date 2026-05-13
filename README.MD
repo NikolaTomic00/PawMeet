@@ -1,7 +1,7 @@
 <h1 align="center"> PawMeet – Real-Time Chat App for Dog Lovers 🐾 </h1>
 
 <p align="center"> <img src="./frontend/public/chatscreenshot.png" width="1100" /> </p>
-## 🔥 Chat App – Key Features
+🔥 Chat App – Key Features
 
 - 🔐 Custom JWT Authentication (no third-party auth)
 - ⚡ Real-time messaging with Socket.io
@@ -33,13 +33,7 @@ The project focuses on building a modern production-style MERN application with 
 - Git & GitHub
 - Render Deployment
 
-<p align="center"> <img src="./frontend/public/signupscreenshot.png" width="1100" /> </p>
-
-
-
 PawMeet allows users to chat in real time, upload and share photos, send GIFs, discover nearby dog owners, and connect with people who share the same love for pets. The app combines modern social features with a clean and responsive user experience built for everyday use.
-
-
 
 <p align="center"> <img src="./frontend/public/loginscreenshot.png" width="1100" /> </p>
 
